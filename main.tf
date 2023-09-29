@@ -76,8 +76,7 @@ resource "aws_launch_configuration" "nginx_lc" {
   user_data = base64encode(<<EOF
   #!/bin/bash
   sudo yum update -y
-  sudo yum install nginx
-  sudo vi /etc/nginx/nginx.conf
+  sudo yum install nginx -y
   sudo systemctl start nginx
   sudo systemctl enable nginx
   EOF
