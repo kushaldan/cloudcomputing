@@ -73,7 +73,7 @@ resource "aws_launch_configuration" "nginx_lc" {
   key_name = var.key_name 
   security_groups = [aws_security_group.nginx_sg.id]
 
-  user_data = base64encode(<<EOF
+  user_data = base64encode(<<-EOF
   #!/bin/bash
   sudo yum update -y
   sudo yum install nginx -y
